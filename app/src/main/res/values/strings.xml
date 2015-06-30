@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Demo battery status</string>
+    <string name="level">電量</string>
+    <string name="status">狀態</string>
+    <string name="health">電存健康狀況</string>
+    <string name="plugged">充電</string>
+</resources>
