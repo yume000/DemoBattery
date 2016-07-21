@@ -4,4 +4,8 @@
     <string name="status">狀態</string>
     <string name="health">電存健康狀況</string>
     <string name="plugged">充電</string>
+    <string name="batteryLevelTxt">目前電量 : %1$d</string>
+    <string name="batteryStatusTxt">電池充電狀態 : %1$s</string>
+    <string name="batteryHealthTxt">電池健康狀態 : %1$s</string>
+    <string name="batteryPluggedTxt">電池充電方式 : %1$s</string>
 </resources>

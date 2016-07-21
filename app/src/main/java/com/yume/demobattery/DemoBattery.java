@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -23,7 +24,8 @@ public class DemoBattery extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             int lv=intent.getIntExtra("level",0); //取得目前電量
-            batteryLevelTxt.setText("目前電量>>"+String.valueOf(lv)+"%");
+            //batteryLevelTxt.setText("目前電量>>"+String.format("%s",lv)+String.valueOf(lv)+"%");
+            batteryLevelTxt.setText(getResources().getString(R.string.batteryLevelTxt,lv));
             int status = intent.getIntExtra("status", 0); //偵測電池狀態
             String statusString="";
             switch (status) {
@@ -43,7 +45,7 @@ public class DemoBattery extends Activity {
                     statusString = "full";
                     break;
             }
-            batteryStatusTxt.setText("電池充電狀態>>"+statusString);
+            batteryStatusTxt.setText(getResources().getString(R.string.batteryStatusTxt, statusString));
             int health = intent.getIntExtra("health", 0); //電池健康狀態
             String healthString = "";
             switch (health) {
@@ -66,7 +68,7 @@ public class DemoBattery extends Activity {
                     healthString = "unspecified failure";
                     break;
             }
-            batteryHealthTxt.setText("電池健康狀態>>"+healthString);
+            batteryHealthTxt.setText(getResources().getString(R.string.batteryHealthTxt,healthString));
 
             int plugged = intent.getIntExtra("plugged", 0); //充電方式
             String acString = "";
@@ -78,7 +80,7 @@ public class DemoBattery extends Activity {
                     acString = "plugged usb"; //usb充電
                     break;
             }
-            batteryPluggedTxt.setText("電池充電方式>>"+acString);
+            batteryPluggedTxt.setText(getResources().getString(R.string.batteryPluggedTxt,acString));
         }
     };
 }
